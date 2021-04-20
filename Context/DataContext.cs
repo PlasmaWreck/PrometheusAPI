@@ -2,11 +2,12 @@ using Microsoft.EntityFrameworkCore;
 using PrometheusAPI.Models;
 using System.Collections.Generic;
 
-namespace PrometheusAPI.Services.Context
+namespace PrometheusAPI.Context
 {
     public class DataContext : DbContext
     {
-        public DbSet<Login> UserInfoSql { get; set; }
+        public DbSet<Login> Users { get; set; }
+        public DbSet<GraphicsCard> GraphicsCards { get; set; }
 
         public DataContext(DbContextOptions<DataContext> options) : base(options)
         { }
@@ -24,19 +25,14 @@ namespace PrometheusAPI.Services.Context
                     Id=1,
                     Username="Angel",
                     Password="password"
-                },
-                new Login(){
-                    Id=2,
-                    Username="Chandler",
-                    Password="password"
-                },
-                new Login(){
-                    Id=3,
-                    Username="Ken",
-                    Password="password"
                 }
             };
+            var graphicsCardFixedData = new List<GraphicsCard>(){
+                //"Dual Link DVI-I", "HDMI 2.0b","Display Port 1.4","Display Port 1.4","Display Port 1.4"
+                new GraphicsCard(){Id = 1, Name = "GeForce GTX 1080", GPU = "NVIDIA", CoreCount = 2560, CoreClockSpeed = 1607, MemoryType = "GDDR5X", MemorySize = 8, MemoryBandwith = 320, MotherBoardInterface = 256, ThermalDesignPower= 180, VideoOutputPorts = "", PowerConnectors = "", APISupport = "", ComputePerformance = 9}
+            };
             builder.Entity<Login>().HasData(fixedData);
+            builder.Entity<GraphicsCard>().HasData(graphicsCardFixedData);
         }
     }
 }

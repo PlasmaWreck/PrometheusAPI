@@ -27,9 +27,9 @@ namespace PrometheusAPI.Models
         //Measured in Watts
         public int ThermalDesignPower {get;set;}
 
-        public string[] PowerConnectors {get;set;}
+        public string PowerConnectors {get;set;}
 
-        public string[] VideoOutputPorts {get;set;}
+        public string VideoOutputPorts {get;set;}
 
         public string APISupport {get;set;}
         
