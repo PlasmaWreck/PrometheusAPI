@@ -22,9 +22,9 @@ namespace PrometheusAPI.Controllers
             _dataFromService = dataFromService;
         }
 
-        [HttpGet ,Authorize]
-        public IEnumerable<GraphicsCard> GetGraphicsCards(){
-            return _dataFromService.GetGraphicsCards();
+        [HttpGet]
+        public IEnumerable<GraphicsCard> Get(){
+            return _dataFromService.getGraphicsCards();
         }
 
         [HttpPost, Route("add")]
