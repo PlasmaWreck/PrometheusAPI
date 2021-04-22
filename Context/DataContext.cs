@@ -23,7 +23,7 @@ namespace PrometheusAPI.Context
             var fixedData = new List<Login>(){
                 new Login(){
                     Id=1,
-                    Username="Angel",
+                    Email="Angel",
                     Password="password"
                 }
             };
