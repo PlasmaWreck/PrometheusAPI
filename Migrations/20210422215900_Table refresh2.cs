@@ -2,7 +2,7 @@
 
 namespace PrometheusAPI.Migrations
 {
-    public partial class initialcommit : Migration
+    public partial class Tablerefresh2 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -21,10 +21,9 @@ namespace PrometheusAPI.Migrations
                     MemoryBandwith = table.Column<int>(nullable: false),
                     MotherBoardInterface = table.Column<int>(nullable: false),
                     ThermalDesignPower = table.Column<int>(nullable: false),
-                    PowerConnectors = table.Column<string>(nullable: true),
                     VideoOutputPorts = table.Column<string>(nullable: true),
-                    APISupport = table.Column<string>(nullable: true),
-                    ComputePerformance = table.Column<int>(nullable: false)
+                    ComputePerformance = table.Column<int>(nullable: false),
+                    Price = table.Column<float>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -47,8 +46,8 @@ namespace PrometheusAPI.Migrations
 
             migrationBuilder.InsertData(
                 table: "GraphicsCards",
-                columns: new[] { "Id", "APISupport", "ComputePerformance", "CoreClockSpeed", "CoreCount", "GPU", "MemoryBandwith", "MemorySize", "MemoryType", "MotherBoardInterface", "Name", "PowerConnectors", "ThermalDesignPower", "VideoOutputPorts" },
-                values: new object[] { 1, "", 9, 1607, 2560, "NVIDIA", 320, 8, "GDDR5X", 256, "GeForce GTX 1080", "", 180, "" });
+                columns: new[] { "Id", "ComputePerformance", "CoreClockSpeed", "CoreCount", "GPU", "MemoryBandwith", "MemorySize", "MemoryType", "MotherBoardInterface", "Name", "Price", "ThermalDesignPower", "VideoOutputPorts" },
+                values: new object[] { 1, 9, 1607, 2560, "NVIDIA", 320, 8, "GDDR5X", 256, "GeForce GTX 1080", 1499f, 180, "" });
 
             migrationBuilder.InsertData(
                 table: "Users",

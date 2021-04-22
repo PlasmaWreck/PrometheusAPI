@@ -29,7 +29,7 @@ namespace PrometheusAPI.Context
             };
             var graphicsCardFixedData = new List<GraphicsCard>(){
                 //"Dual Link DVI-I", "HDMI 2.0b","Display Port 1.4","Display Port 1.4","Display Port 1.4"
-                new GraphicsCard(){Id = 1, Name = "GeForce GTX 1080", GPU = "NVIDIA", CoreCount = 2560, CoreClockSpeed = 1607, MemoryType = "GDDR5X", MemorySize = 8, MemoryBandwith = 320, MotherBoardInterface = 256, ThermalDesignPower= 180, VideoOutputPorts = "", PowerConnectors = "", APISupport = "", ComputePerformance = 9}
+                new GraphicsCard(){Id = 1, Name = "GeForce GTX 1080", GPU = "NVIDIA", CoreCount = 2560, CoreClockSpeed = 1607, MemoryType = "GDDR5X", MemorySize = 8, MemoryBandwith = 320, MotherBoardInterface = 256, ThermalDesignPower= 180, VideoOutputPorts = "", ComputePerformance = 9, Price = 1499}
             };
             builder.Entity<Login>().HasData(fixedData);
             builder.Entity<GraphicsCard>().HasData(graphicsCardFixedData);
