@@ -25,9 +25,6 @@ namespace PrometheusAPI.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("APISupport")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<int>("ComputePerformance")
                         .HasColumnType("int");
 
@@ -55,8 +52,8 @@ namespace PrometheusAPI.Migrations
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("PowerConnectors")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<float>("Price")
+                        .HasColumnType("real");
 
                     b.Property<int>("ThermalDesignPower")
                         .HasColumnType("int");
@@ -72,7 +69,6 @@ namespace PrometheusAPI.Migrations
                         new
                         {
                             Id = 1,
-                            APISupport = "",
                             ComputePerformance = 9,
                             CoreClockSpeed = 1607,
                             CoreCount = 2560,
@@ -82,7 +78,7 @@ namespace PrometheusAPI.Migrations
                             MemoryType = "GDDR5X",
                             MotherBoardInterface = 256,
                             Name = "GeForce GTX 1080",
-                            PowerConnectors = "",
+                            Price = 1499f,
                             ThermalDesignPower = 180,
                             VideoOutputPorts = ""
                         });
@@ -95,10 +91,10 @@ namespace PrometheusAPI.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Password")
+                    b.Property<string>("Email")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Username")
+                    b.Property<string>("Password")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
@@ -109,8 +105,8 @@ namespace PrometheusAPI.Migrations
                         new
                         {
                             Id = 1,
-                            Password = "password",
-                            Username = "Angel"
+                            Email = "Angel",
+                            Password = "password"
                         });
                 });
 #pragma warning restore 612, 618
