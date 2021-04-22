@@ -2,7 +2,7 @@
 
 namespace PrometheusAPI.Migrations
 {
-    public partial class Tablerefresh2 : Migration
+    public partial class initialcommit : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -36,7 +36,7 @@ namespace PrometheusAPI.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Username = table.Column<string>(nullable: true),
+                    Email = table.Column<string>(nullable: true),
                     Password = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
@@ -51,8 +51,8 @@ namespace PrometheusAPI.Migrations
 
             migrationBuilder.InsertData(
                 table: "Users",
-                columns: new[] { "Id", "Password", "Username" },
-                values: new object[] { 1, "password", "Angel" });
+                columns: new[] { "Id", "Email", "Password" },
+                values: new object[] { 1, "Angel", "password" });
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

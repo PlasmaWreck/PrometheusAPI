@@ -9,8 +9,8 @@ using PrometheusAPI.Context;
 namespace PrometheusAPI.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20210422215900_Table refresh2")]
-    partial class Tablerefresh2
+    [Migration("20210422224528_initial commit")]
+    partial class initialcommit
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -93,10 +93,10 @@ namespace PrometheusAPI.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Password")
+                    b.Property<string>("Email")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Username")
+                    b.Property<string>("Password")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
@@ -107,8 +107,8 @@ namespace PrometheusAPI.Migrations
                         new
                         {
                             Id = 1,
-                            Password = "password",
-                            Username = "Angel"
+                            Email = "Angel",
+                            Password = "password"
                         });
                 });
 #pragma warning restore 612, 618

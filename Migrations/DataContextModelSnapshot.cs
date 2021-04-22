@@ -91,10 +91,10 @@ namespace PrometheusAPI.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Password")
+                    b.Property<string>("Email")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Username")
+                    b.Property<string>("Password")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
@@ -105,8 +105,8 @@ namespace PrometheusAPI.Migrations
                         new
                         {
                             Id = 1,
-                            Password = "password",
-                            Username = "Angel"
+                            Email = "Angel",
+                            Password = "password"
                         });
                 });
 #pragma warning restore 612, 618
