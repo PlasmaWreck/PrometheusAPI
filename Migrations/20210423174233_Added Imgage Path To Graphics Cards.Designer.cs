@@ -2,15 +2,17 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using PrometheusAPI.Context;
 
 namespace PrometheusAPI.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20210423174233_Added Imgage Path To Graphics Cards")]
+    partial class AddedImgagePathToGraphicsCards
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -25,11 +27,11 @@ namespace PrometheusAPI.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("ComputePerformance")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("ComputePerformance")
+                        .HasColumnType("int");
 
-                    b.Property<string>("CoreClockSpeed")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("CoreClockSpeed")
+                        .HasColumnType("int");
 
                     b.Property<int>("CoreCount")
                         .HasColumnType("int");
@@ -40,35 +42,26 @@ namespace PrometheusAPI.Migrations
                     b.Property<string>("ImagePath")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("MemoryBandwidth")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("MemoryBandwith")
+                        .HasColumnType("int");
 
-                    b.Property<string>("MemoryBus")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("MemorySize")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("MemorySpeed")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("MemorySize")
+                        .HasColumnType("int");
 
                     b.Property<string>("MemoryType")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("MotherBoardInterface")
+                        .HasColumnType("int");
+
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("PowerConnectors")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<float>("Price")
+                        .HasColumnType("real");
 
-                    b.Property<string>("Price")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("SuggestedPSU")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("ThermalDesignPower")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("ThermalDesignPower")
+                        .HasColumnType("int");
 
                     b.Property<string>("VideoOutputPorts")
                         .HasColumnType("nvarchar(max)");
@@ -81,22 +74,18 @@ namespace PrometheusAPI.Migrations
                         new
                         {
                             Id = 1,
-                            ComputePerformance = "8.873 TFLOPS",
-                            CoreClockSpeed = "1607 MHz",
+                            ComputePerformance = 9,
+                            CoreClockSpeed = 1607,
                             CoreCount = 2560,
                             GPU = "NVIDIA",
-                            ImagePath = "/graphicscards/nvidiageforcegtx1080",
-                            MemoryBandwidth = "320.3 GB/s",
-                            MemoryBus = "256 bit",
-                            MemorySize = "8 GB",
-                            MemorySpeed = "1251MHz",
+                            MemoryBandwith = 320,
+                            MemorySize = 8,
                             MemoryType = "GDDR5X",
-                            Name = "NVIDIA GeForce GTX 1080",
-                            PowerConnectors = "1x 8-pin",
-                            Price = "599 USD",
-                            SuggestedPSU = "450 W",
-                            ThermalDesignPower = "180 W",
-                            VideoOutputPorts = "[\"1x DVI\",\"1x DisplayPort\",\"1x DisplayPort\",\"1x DisplayPort\",\"1x HDMI\"]"
+                            MotherBoardInterface = 256,
+                            Name = "GeForce GTX 1080",
+                            Price = 1499f,
+                            ThermalDesignPower = 180,
+                            VideoOutputPorts = ""
                         });
                 });
 
