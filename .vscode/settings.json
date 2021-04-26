@@ -1,4 +1,9 @@
 {
     "appService.defaultWebAppToDeploy": "/subscriptions/4f7b81a9-2a20-4ff7-ab96-47ac3b58995c/resourceGroups/HomeWorks/providers/Microsoft.Web/sites/PCPAPI",
-    "appService.deploySubpath": "publish"
+    "appService.deploySubpath": "publish",
+    "cSpell.ignoreWords": [
+        "gbps",
+        "gddr",
+        "x"
+    ]
 }
