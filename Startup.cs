@@ -37,7 +37,8 @@ namespace PrometheusAPI
             services.AddControllers();
             services.AddScoped<GraphicsCardService>();
             services.AddScoped<authService>();
-            services.AddScoped<Auth>();
+            services.AddScoped<AccountInfoService>();
+            // services.AddScoped<Auth>();
 
             services.AddAuthentication(opt =>
             {
