@@ -23,43 +23,33 @@ namespace PrometheusAPI.Controllers
 
 
 
+        // [HttpPost, Route("login")]
+        // public IActionResult Login([FromBody] Login user)
+        // {
+        //     if(user.Email == "User"  && user.Password == "justapassword")
+        //     {
+        //         var secretKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("superSecretKey@345"));
+        //         var signinCredentials = new SigningCredentials(secretKey, SecurityAlgorithms.HmacSha256);
+        //         var tokenOptions = new JwtSecurityToken(
+        //             issuer: "http://localhost:5000",
+        //             audience: "http://localhost:5000",
+        //             claims: new List<Claim>(),
+        //             expires: DateTime.Now.AddDays(5),
+        //             signingCredentials: signinCredentials
+        //         );
+        //         var tokenString = new JwtSecurityTokenHandler().WriteToken(tokenOptions);
+        //         return Ok(new { Token = tokenString });
+        //     }
+        //     return Unauthorized();
 
+        // }
 
+        
 
-
-
-        [HttpPost, Route("login")]
-        public IActionResult Login([FromBody] Login user)
-        {
-            if(user.Email == "User"  && user.Password == "justapassword")
-            {
-                var secretKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("superSecretKey@345"));
-                var signinCredentials = new SigningCredentials(secretKey, SecurityAlgorithms.HmacSha256);
-                var tokenOptions = new JwtSecurityToken(
-                    issuer: "http://localhost:5000",
-                    audience: "http://localhost:5000",
-                    claims: new List<Claim>(),
-                    expires: DateTime.Now.AddDays(5),
-                    signingCredentials: signinCredentials
-                );
-                var tokenString = new JwtSecurityTokenHandler().WriteToken(tokenOptions);
-                return Ok(new { Token = tokenString });
-            }
-            return Unauthorized();
-
-        }
-
-        [HttpGet]
-        public IEnumerable<Login> GetAccountList()
-        {
-            return _dataFromLogin.GetAccountList();
-        }
-
-        [HttpPost("GetAccount")]
+        [HttpPost("login")]
         public IActionResult CheckAccount([FromBody] Login user)
         {
-            var x = _dataFromLogin.CheckAccount(user.Email);
-            if(x)
+            if(_dataFromLogin.CheckAccount(user.Email, user.Password))
             {
                 var secretKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("superSecretKey@345"));
                 var signinCredentials = new SigningCredentials(secretKey, SecurityAlgorithms.HmacSha256);
@@ -75,6 +65,9 @@ namespace PrometheusAPI.Controllers
             }
             return Unauthorized();
         }
+        
+
+       
 
     }
 
