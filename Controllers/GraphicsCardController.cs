@@ -22,34 +22,29 @@ namespace PrometheusAPI.Controllers
             _dataFromService = dataFromService;
         }
 
-        [HttpGet]
+        [HttpGet, AllowAnonymous]
         public IEnumerable<GraphicsCard> Get(){
             return _dataFromService.getGraphicsCards();
         }
 
-        [HttpGet, Route("search/id/{search}")]
+        [HttpGet("search/{search}")]
         public IEnumerable<GraphicsCard> SearchId(string search){
-            return _dataFromService.searchGraphicsCardsById(search);
+            return _dataFromService.searchGraphicsCards(search);
         }
-        [HttpGet, Route("search/name/{search}")]
-        public IEnumerable<GraphicsCard> SearchName(string search){
-            return _dataFromService.searchGraphicsCardsByName(search);
-        }
-
-
-        [HttpPost, Route("add")]
+        
+        [HttpPost("add")]
         public bool Add(GraphicsCard card)
         {
             return _dataFromService.addGraphicsCard(card);
         }
 
-        [HttpPut, Route("update")]
+        [HttpPut("update")]
         public bool UpdateId([FromBody] GraphicsCard card)
         {
             return _dataFromService.updateGraphicsCard(card);
         }
 
-        [HttpDelete, Route("delete")]
+        [HttpDelete("delete")]
         public bool deleteGraphicsCard(GraphicsCard card)
         {
             return _dataFromService.deleteGraphicsCard(card);
