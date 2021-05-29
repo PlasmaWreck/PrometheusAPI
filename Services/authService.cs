@@ -13,7 +13,7 @@ namespace PrometheusAPI.Services
 
         public authService(DataContext context)
         {
-             _context = context;
+            _context = context;
         }
 
         public List<Login> AccountList = new List<Login>(){
