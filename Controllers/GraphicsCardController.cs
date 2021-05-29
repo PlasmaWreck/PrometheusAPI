@@ -28,7 +28,7 @@ namespace PrometheusAPI.Controllers
         }
 
         [HttpGet("byid/{id}")]
-        public IEnumerable<GraphicsCard> GetGraphicsCardById([FromRoute] int id){
+        public GraphicsCard GetGraphicsCardById([FromRoute] int id){
             return _dataFromService.GetGraphicsCardById(id);
         }
         
@@ -44,10 +44,10 @@ namespace PrometheusAPI.Controllers
             return _dataFromService.updateGraphicsCard(card);
         }
 
-        [HttpDelete("delete/{id}")]
-        public bool deleteGraphicsCard([FromRout] int id)
+        [HttpDelete("delete")]
+        public bool deleteGraphicsCard(GraphicsCard card)
         {
-            return _dataFromService.deleteGraphicsCard(id);
+            return _dataFromService.deleteGraphicsCard(card);
         }
     }
 }
