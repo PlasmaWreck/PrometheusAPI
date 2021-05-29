@@ -19,9 +19,10 @@ namespace PrometheusAPI.Services
             return _dataFromService.Processors;
         }
 
-        public IEnumerable<Processor> searchProcessors(string search)
+        public Processor GetProcessorById(int id)
         {
-            return _dataFromService.Processors.Where(p => p.Id.ToString() == search);
+            return _dataFromService.Processors
+            .SingleOrDefault(p => p.Id == id);
         }
         
         public bool addProcessor(Processor chip)

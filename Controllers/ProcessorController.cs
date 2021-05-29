@@ -28,8 +28,8 @@ namespace PrometheusAPI.Controllers
         }
 
         [HttpGet("byId/{id}")]
-        public IEnumerable<Processor> SearchId([FromRoute]int id){
-            return _dataFromService.searchProcessors(id);
+        public IEnumerable<Processor> GetProcessorById([FromRoute] int id){
+            return _dataFromService.GetProcessorById(id);
         }
         
         [HttpPost("add")]

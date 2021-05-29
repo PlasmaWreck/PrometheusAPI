@@ -27,9 +27,9 @@ namespace PrometheusAPI.Controllers
             return _dataFromService.getGraphicsCards();
         }
 
-        [HttpGet("search/{search}")]
-        public IEnumerable<GraphicsCard> SearchId(string search){
-            return _dataFromService.searchGraphicsCards(search);
+        [HttpGet("byid/{id}")]
+        public IEnumerable<GraphicsCard> GetGraphicsCardById([FromRoute] int id){
+            return _dataFromService.GetGraphicsCardById(id);
         }
         
         [HttpPost("add")]
