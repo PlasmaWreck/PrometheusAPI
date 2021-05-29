@@ -19,9 +19,9 @@ namespace PrometheusAPI.Services
             return _dataFromService.GraphicsCards;
         }
 
-        public IEnumerable<GraphicsCard> searchGraphicsCards(string search)
+        public IEnumerable<GraphicsCard> searchGraphicsCards(int id)
         {
-            return _dataFromService.GraphicsCards.Where(p => p.Id.ToString() == search);
+            return _dataFromService.GraphicsCards.Where(p => p.Id == id);
         }
         
         public bool addGraphicsCard(GraphicsCard card)

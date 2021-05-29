@@ -44,10 +44,10 @@ namespace PrometheusAPI.Controllers
             return _dataFromService.updateGraphicsCard(card);
         }
 
-        [HttpDelete("delete")]
-        public bool deleteGraphicsCard(GraphicsCard card)
+        [HttpDelete("delete/{id}")]
+        public bool deleteGraphicsCard([FromRout] int id)
         {
-            return _dataFromService.deleteGraphicsCard(card);
+            return _dataFromService.deleteGraphicsCard(id);
         }
     }
 }

@@ -27,9 +27,9 @@ namespace PrometheusAPI.Controllers
             return _dataFromService.getProcessors();
         }
 
-        [HttpGet("search/{search}")]
-        public IEnumerable<Processor> SearchId(string search){
-            return _dataFromService.searchProcessors(search);
+        [HttpGet("byId/{id}")]
+        public IEnumerable<Processor> SearchId([FromRoute]int id){
+            return _dataFromService.searchProcessors(id);
         }
         
         [HttpPost("add")]
