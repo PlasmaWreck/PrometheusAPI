@@ -15,9 +15,9 @@ namespace PrometheusAPI.Controllers
 
     public class GraphicsCardController : ControllerBase
     {
-        private readonly HardDriveService _dataFromService;
+        private readonly GraphicsCardService _dataFromService;
 
-        public GraphicsCardController(HardDriveService dataFromService)
+        public GraphicsCardController(GraphicsCardService dataFromService)
         {
             _dataFromService = dataFromService;
         }

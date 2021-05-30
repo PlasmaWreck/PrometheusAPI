@@ -1,6 +1,6 @@
 namespace PrometheusAPI.Models
 {
-    public class OperatingSystem
+    public class OS
     {
         public int Id { get; set; }
         public string Name { get; set; }

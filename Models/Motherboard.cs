@@ -1,6 +1,6 @@
 namespace PrometheusAPI.Models
 {
-    public class Motherboard
+    public class MotherBoard
     {
         public int Id { get; set; }
         public string Name { get; set; }

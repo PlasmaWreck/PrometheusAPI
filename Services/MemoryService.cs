@@ -14,34 +14,34 @@ namespace PrometheusAPI.Services
         {
             _dataFromService = dataFromService;
         }
-        public IEnumerable<GraphicsCard> getGraphicsCards()
+        public IEnumerable<Memory> getMemories()
         {
-            return _dataFromService.GraphicsCards;
+            return _dataFromService.Memories;
         }
 
-        public GraphicsCard GetGraphicsCardById(int id)
+        public Memory GetMemoryById(int id)
         {
-            return _dataFromService.GraphicsCards
+            return _dataFromService.Memories
             .SingleOrDefault(p => p.Id == id);
         }
         
-        public bool addGraphicsCard(GraphicsCard card)
+        public bool addMemory(Memory input)
         {
-            _dataFromService.Add(card);
+            _dataFromService.Add(input);
             _dataFromService.SaveChanges();
             return true;
         }
 
-        public bool updateGraphicsCard(GraphicsCard card)
+        public bool updateMemory(Memory input)
         {
-            _dataFromService.GraphicsCards.Update(card);
+            _dataFromService.Memories.Update(input);
             _dataFromService.SaveChanges();
             return true;
         }
 
-        public bool deleteGraphicsCard(GraphicsCard card)
+        public bool deleteMemory(Memory input)
         {
-            _dataFromService.GraphicsCards.Remove(card);
+            _dataFromService.Memories.Remove(input);
             _dataFromService.SaveChanges();
             return true;
         }
