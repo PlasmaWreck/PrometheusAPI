@@ -8,7 +8,15 @@ namespace PrometheusAPI.Context
     {
         public DbSet<Login> Users { get; set; }
         public DbSet<GraphicsCard> GraphicsCards { get; set; }
+        public DbSet<Case> CAses { get; set; }
+        public DbSet<HardDrive> HardDrives { get; set; }
+        public DbSet<Memory> Memories { get; set; }
+        public DbSet<Motherboard> Motherboards { get; set; }
+        public DbSet<OperatingSystem> OperatingSystems { get; set; }
+        public DbSet<OpticalDrive> OpticalDrives { get; set; }
         public DbSet<Processor> Processors { get; set; }
+        public DbSet<PowerSupply> PowerSupplies { get; set; }
+        public DbSet<Cooler> Coolers { get; set; }
 
         public DataContext(DbContextOptions<DataContext> options) : base(options)
         { }
