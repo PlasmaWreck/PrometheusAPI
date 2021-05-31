@@ -36,8 +36,16 @@ namespace PrometheusAPI
         {
             services.AddControllers();
             services.AddScoped<HardDriveService>();
+            services.AddScoped<OperatingSystemService>();
+            services.AddScoped<CaseService>();
+            services.AddScoped<OpticalDriveService>();
+            services.AddScoped<CoolerService>();
+            services.AddScoped<PowerSupplyService>();
             services.AddScoped<ProcessorService>();
+            services.AddScoped<GraphicsCardService>();
+            services.AddScoped<MotherBoardService>();
             services.AddScoped<authService>();
+            services.AddScoped<MemoryService>();
             services.AddScoped<AccountInfoService>();
             // services.AddScoped<Auth>();
 

@@ -33,7 +33,7 @@ namespace PrometheusAPI.Controllers
         }
         
         [HttpPost("add")]
-        public bool Add(GraphicsCard card)
+        public bool Add([FromBody] GraphicsCard card)
         {
             return _dataFromService.addGraphicsCard(card);
         }
@@ -45,7 +45,7 @@ namespace PrometheusAPI.Controllers
         }
 
         [HttpDelete("delete")]
-        public bool deleteGraphicsCard(GraphicsCard card)
+        public bool deleteGraphicsCard([FromBody] GraphicsCard card)
         {
             return _dataFromService.deleteGraphicsCard(card);
         }

@@ -12,9 +12,10 @@ namespace PrometheusAPI.Models
         public string RAMSlots { get; set; }
         public string VideoConnectors { get; set; }
         public string PCIESlots { get; set; }
-        public string InBuiltWifi { get; set; }
+        public bool InBuiltWifi { get; set; }
         public string Sata3Connectors { get; set; }
-        public string M2NVMESupport { get; set; }
+        public bool M2NVMESupport { get; set; }
         public string Price { get; set; }
+        public string ImagePath { get; set; }
     }
 }

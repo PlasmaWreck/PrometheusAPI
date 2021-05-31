@@ -10,5 +10,6 @@ namespace PrometheusAPI.Models
         public string CellType { get; set; }
         public string ClockFrequency { get; set; }
         public string Price { get; set; }
+        public string ImagePath { get; set; }
     }
 }

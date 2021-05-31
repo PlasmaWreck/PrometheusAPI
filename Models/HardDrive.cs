@@ -11,5 +11,6 @@ namespace PrometheusAPI.Models
         public string Interface { get; set; }
         public string Size { get; set; }
         public string Price { get; set; }
+        public string ImagePath { get; set; }
     }
 }
