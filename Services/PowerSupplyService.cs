@@ -14,32 +14,32 @@ namespace PrometheusAPI.Services
         {
             _dataFromService = dataFromService;
         }
-        public IEnumerable<PowerSupply> getGraphicsCards()
+        public IEnumerable<PowerSupply> getPowerSupplies()
         {
             return _dataFromService.PowerSupplies;
         }
 
-        public PowerSupply GetGraphicsCardById(int id)
+        public PowerSupply GetPowerSupplyById(int id)
         {
             return _dataFromService.PowerSupplies
             .SingleOrDefault(p => p.Id == id);
         }
         
-        public bool addGraphicsCard(PowerSupply input)
+        public bool addPowerSupply(PowerSupply input)
         {
             _dataFromService.Add(input);
             _dataFromService.SaveChanges();
             return true;
         }
 
-        public bool updateGraphicsCard(PowerSupply input)
+        public bool updatePowerSupply(PowerSupply input)
         {
             _dataFromService.PowerSupplies.Update(input);
             _dataFromService.SaveChanges();
             return true;
         }
 
-        public bool deleteGraphicsCard(PowerSupply input)
+        public bool deletePowerSupply(PowerSupply input)
         {
             _dataFromService.PowerSupplies.Remove(input);
             _dataFromService.SaveChanges();
