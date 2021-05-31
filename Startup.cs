@@ -45,6 +45,7 @@ namespace PrometheusAPI
             services.AddScoped<GraphicsCardService>();
             services.AddScoped<MotherBoardService>();
             services.AddScoped<authService>();
+            services.AddScoped<MemoryService>();
             services.AddScoped<AccountInfoService>();
             // services.AddScoped<Auth>();
 
