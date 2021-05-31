@@ -10,10 +10,10 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace PrometheusAPI.Controllers
 {
+    [ApiController]
+    [Route("[controller]")]
     public class MemoryController : ControllerBase
     {
-        [ApiController]
-        [Route("[controller]")]
         private readonly MemoryService _dataFromService;
 
         public MemoryController(MemoryService dataFromService)

@@ -10,10 +10,11 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace PrometheusAPI.Controllers
 {
+    [ApiController]
+    [Route("[controller]")]
+    
     public class PowerSupplyController : ControllerBase
     {
-        [ApiController]
-        [Route("[controller]")]
         private readonly PowerSupplyService _dataFromService;
 
         public PowerSupplyController(PowerSupplyService dataFromService)

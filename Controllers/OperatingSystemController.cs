@@ -10,10 +10,11 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace PrometheusAPI.Controllers
 {
+    [ApiController]
+    [Route("[controller]")]
+    
     public class OperatingSystemController : ControllerBase
     {
-        [ApiController]
-        [Route("[controller]")]
         private readonly OperatingSystemService _dataFromService;
 
         public OperatingSystemController(OperatingSystemService dataFromService)

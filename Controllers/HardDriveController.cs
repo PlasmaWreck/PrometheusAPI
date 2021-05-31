@@ -10,10 +10,11 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace PrometheusAPI.Controllers
 {
+    [ApiController]
+    [Route("[controller]")]
+    
     public class HardDriveController : ControllerBase
     {
-        [ApiController]
-        [Route("[controller]")]
         private readonly HardDriveService _dataFromService;
 
         public HardDriveController(HardDriveService dataFromService)

@@ -10,10 +10,11 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace PrometheusAPI.Controllers
 {
+    [ApiController]
+    [Route("[controller]")]
+    
     public class OpticalDriveController : ControllerBase
     {
-        [ApiController]
-        [Route("[controller]")]
         private readonly OpticalDriveService _dataFromService;
 
         public OpticalDriveController(OpticalDriveService dataFromService)

@@ -10,11 +10,10 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace PrometheusAPI.Controllers
 {
-    public class CoolerController : ControllerBase
-    {
     [ApiController]
     [Route("[controller]")]
-
+    public class CoolerController : ControllerBase
+    {
         private readonly CoolerService _dataFromService;
 
         public CoolerController(CoolerService dataFromService)

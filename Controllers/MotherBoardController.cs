@@ -10,10 +10,11 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace PrometheusAPI.Controllers
 {
+    [ApiController]
+    [Route("[controller]")]
+    
     public class MotherBoardController : ControllerBase
     {
-        [ApiController]
-        [Route("[controller]")]
         private readonly MotherBoardService _dataFromService;
 
         public MotherBoardController(MotherBoardService dataFromService)
