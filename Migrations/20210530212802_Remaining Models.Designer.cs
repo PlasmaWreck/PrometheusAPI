@@ -2,15 +2,17 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using PrometheusAPI.Context;
 
 namespace PrometheusAPI.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20210530212802_Remaining Models")]
+    partial class RemainingModels
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -26,9 +28,6 @@ namespace PrometheusAPI.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Brand")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("ImagePath")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("MBFormFactor")
@@ -48,7 +47,7 @@ namespace PrometheusAPI.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Cases");
+                    b.ToTable("CAses");
                 });
 
             modelBuilder.Entity("PrometheusAPI.Models.Cooler", b =>
@@ -61,17 +60,14 @@ namespace PrometheusAPI.Migrations
                     b.Property<string>("Brand")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("ImagePath")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<bool>("LiquidCooling")
                         .HasColumnType("bit");
 
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("NumOfFans")
-                        .HasColumnType("int");
+                    b.Property<string>("NumOfFans")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Price")
                         .HasColumnType("nvarchar(max)");
@@ -179,9 +175,6 @@ namespace PrometheusAPI.Migrations
                     b.Property<string>("DiskSize")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("ImagePath")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("Interface")
                         .HasColumnType("nvarchar(max)");
 
@@ -247,9 +240,6 @@ namespace PrometheusAPI.Migrations
                     b.Property<string>("ClockFrequency")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("ImagePath")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
@@ -264,7 +254,7 @@ namespace PrometheusAPI.Migrations
                     b.ToTable("Memories");
                 });
 
-            modelBuilder.Entity("PrometheusAPI.Models.MotherBoard", b =>
+            modelBuilder.Entity("PrometheusAPI.Models.Motherboard", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -283,14 +273,11 @@ namespace PrometheusAPI.Migrations
                     b.Property<string>("FormFactor")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("ImagePath")
+                    b.Property<string>("InBuiltWifi")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<bool>("InBuiltWifi")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("M2NVMESupport")
-                        .HasColumnType("bit");
+                    b.Property<string>("M2NVMESupport")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
@@ -315,10 +302,10 @@ namespace PrometheusAPI.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("MotherBoards");
+                    b.ToTable("Motherboards");
                 });
 
-            modelBuilder.Entity("PrometheusAPI.Models.OS", b =>
+            modelBuilder.Entity("PrometheusAPI.Models.OperatingSystem", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -326,9 +313,6 @@ namespace PrometheusAPI.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Brand")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("ImagePath")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("InstallMethod")
@@ -361,9 +345,6 @@ namespace PrometheusAPI.Migrations
                     b.Property<string>("ConnectionType")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("ImagePath")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
@@ -386,9 +367,6 @@ namespace PrometheusAPI.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Efficiency")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("ImagePath")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("MainConnectorType")

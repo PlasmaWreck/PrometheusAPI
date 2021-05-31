@@ -7,41 +7,41 @@ using PrometheusAPI.Services;
 
 namespace PrometheusAPI.Services
 {
-    public class GraphicsCardService
+    public class CoolerService
     {
         private readonly DataContext _dataFromService;
-        public GraphicsCardService(DataContext dataFromService)
+        public CoolerService(DataContext dataFromService)
         {
             _dataFromService = dataFromService;
         }
-        public IEnumerable<GraphicsCard> getGraphicsCards()
+        public IEnumerable<Cooler> getCoolers()
         {
-            return _dataFromService.GraphicsCards;
+            return _dataFromService.Coolers;
         }
 
-        public GraphicsCard GetGraphicsCardById(int id)
+        public Cooler GetCoolerById(int id)
         {
-            return _dataFromService.GraphicsCards
+            return _dataFromService.Coolers
             .SingleOrDefault(p => p.Id == id);
         }
         
-        public bool addGraphicsCard(GraphicsCard card)
+        public bool addCooler(Cooler input)
         {
-            _dataFromService.Add(card);
+            _dataFromService.Add(input);
             _dataFromService.SaveChanges();
             return true;
         }
 
-        public bool updateGraphicsCard(GraphicsCard card)
+        public bool updateCooler(Cooler input)
         {
-            _dataFromService.GraphicsCards.Update(card);
+            _dataFromService.Coolers.Update(input);
             _dataFromService.SaveChanges();
             return true;
         }
 
-        public bool deleteGraphicsCard(GraphicsCard card)
+        public bool deleteCooler(Cooler input)
         {
-            _dataFromService.GraphicsCards.Remove(card);
+            _dataFromService.Coolers.Remove(input);
             _dataFromService.SaveChanges();
             return true;
         }

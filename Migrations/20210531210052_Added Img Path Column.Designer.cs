@@ -2,15 +2,17 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using PrometheusAPI.Context;
 
 namespace PrometheusAPI.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20210531210052_Added Img Path Column")]
+    partial class AddedImgPathColumn
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -70,8 +72,8 @@ namespace PrometheusAPI.Migrations
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("NumOfFans")
-                        .HasColumnType("int");
+                    b.Property<string>("NumOfFans")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Price")
                         .HasColumnType("nvarchar(max)");
@@ -286,11 +288,11 @@ namespace PrometheusAPI.Migrations
                     b.Property<string>("ImagePath")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<bool>("InBuiltWifi")
-                        .HasColumnType("bit");
+                    b.Property<string>("InBuiltWifi")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<bool>("M2NVMESupport")
-                        .HasColumnType("bit");
+                    b.Property<string>("M2NVMESupport")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
