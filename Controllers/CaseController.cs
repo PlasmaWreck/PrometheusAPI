@@ -10,6 +10,9 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace PrometheusAPI.Controllers
 {
+    [ApiController]
+    [Route("[controller]")]
+    
     public class CaseController : ControllerBase
     {
         private readonly CaseService _dataFromService;

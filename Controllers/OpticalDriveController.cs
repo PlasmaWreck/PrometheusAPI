@@ -12,6 +12,8 @@ namespace PrometheusAPI.Controllers
 {
     public class OpticalDriveController : ControllerBase
     {
+        [ApiController]
+        [Route("[controller]")]
         private readonly OpticalDriveService _dataFromService;
 
         public OpticalDriveController(OpticalDriveService dataFromService)

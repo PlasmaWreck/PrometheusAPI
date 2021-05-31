@@ -12,6 +12,9 @@ namespace PrometheusAPI.Controllers
 {
     public class CoolerController : ControllerBase
     {
+    [ApiController]
+    [Route("[controller]")]
+
         private readonly CoolerService _dataFromService;
 
         public CoolerController(CoolerService dataFromService)

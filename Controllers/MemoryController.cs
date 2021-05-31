@@ -12,6 +12,8 @@ namespace PrometheusAPI.Controllers
 {
     public class MemoryController : ControllerBase
     {
+        [ApiController]
+        [Route("[controller]")]
         private readonly MemoryService _dataFromService;
 
         public MemoryController(MemoryService dataFromService)

@@ -12,6 +12,8 @@ namespace PrometheusAPI.Controllers
 {
     public class MotherBoardController : ControllerBase
     {
+        [ApiController]
+        [Route("[controller]")]
         private readonly MotherBoardService _dataFromService;
 
         public MotherBoardController(MotherBoardService dataFromService)

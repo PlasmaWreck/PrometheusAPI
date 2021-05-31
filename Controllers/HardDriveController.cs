@@ -12,6 +12,8 @@ namespace PrometheusAPI.Controllers
 {
     public class HardDriveController : ControllerBase
     {
+        [ApiController]
+        [Route("[controller]")]
         private readonly HardDriveService _dataFromService;
 
         public HardDriveController(HardDriveService dataFromService)

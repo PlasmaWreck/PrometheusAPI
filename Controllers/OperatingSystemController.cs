@@ -12,6 +12,8 @@ namespace PrometheusAPI.Controllers
 {
     public class OperatingSystemController : ControllerBase
     {
+        [ApiController]
+        [Route("[controller]")]
         private readonly OperatingSystemService _dataFromService;
 
         public OperatingSystemController(OperatingSystemService dataFromService)
