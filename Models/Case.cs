@@ -9,5 +9,6 @@ namespace PrometheusAPI.Models
         public string MBFormFactor { get; set; }
         public bool RGB { get; set; }
         public string Price { get; set; }
+        public string ImagePath { get; set; }
     }
 }

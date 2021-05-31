@@ -8,5 +8,6 @@ namespace PrometheusAPI.Models
         public string NumOfFans { get; set; }
         public bool LiquidCooling { get; set; }
         public string Price { get; set; }
+        public string ImagePath { get; set; }
     }
 }

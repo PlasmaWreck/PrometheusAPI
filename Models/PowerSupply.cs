@@ -10,5 +10,6 @@ namespace PrometheusAPI.Models
         public string MainConnectorType { get; set; }
         public bool Modular { get; set; }
         public string Price { get; set; }
+        public string ImagePath { get; set; }
     }
 }

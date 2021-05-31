@@ -8,5 +8,6 @@ namespace PrometheusAPI.Models
         public string ConnectionType { get; set; }
         public bool BluRay { get; set; }
         public string Price { get; set; }
+        public string ImagePath { get; set; }
     }
 }

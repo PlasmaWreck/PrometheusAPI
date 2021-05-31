@@ -16,5 +16,6 @@ namespace PrometheusAPI.Models
         public string Sata3Connectors { get; set; }
         public string M2NVMESupport { get; set; }
         public string Price { get; set; }
+        public string ImagePath { get; set; }
     }
 }

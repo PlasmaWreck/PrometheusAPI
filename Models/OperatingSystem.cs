@@ -7,5 +7,6 @@ namespace PrometheusAPI.Models
         public string Brand { get; set; }
         public string InstallMethod { get; set; }
         public string Price { get; set; }
+        public string ImagePath { get; set; }
     }
 }
