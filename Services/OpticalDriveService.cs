@@ -7,41 +7,41 @@ using PrometheusAPI.Services;
 
 namespace PrometheusAPI.Services
 {
-    public class GraphicsCardService
+    public class OpticalDriveService
     {
         private readonly DataContext _dataFromService;
-        public GraphicsCardService(DataContext dataFromService)
+        public OpticalDriveService(DataContext dataFromService)
         {
             _dataFromService = dataFromService;
         }
-        public IEnumerable<GraphicsCard> getGraphicsCards()
+        public IEnumerable<OpticalDrive> getOpticalDrives()
         {
-            return _dataFromService.GraphicsCards;
+            return _dataFromService.OpticalDrives;
         }
 
-        public GraphicsCard GetGraphicsCardById(int id)
+        public OpticalDrive GetOpticalDriveById(int id)
         {
-            return _dataFromService.GraphicsCards
+            return _dataFromService.OpticalDrives
             .SingleOrDefault(p => p.Id == id);
         }
         
-        public bool addGraphicsCard(GraphicsCard card)
+        public bool addOpticalDrive(OpticalDrive input)
         {
-            _dataFromService.Add(card);
+            _dataFromService.Add(input);
             _dataFromService.SaveChanges();
             return true;
         }
 
-        public bool updateGraphicsCard(GraphicsCard card)
+        public bool updateOpticalDrive(OpticalDrive input)
         {
-            _dataFromService.GraphicsCards.Update(card);
+            _dataFromService.OpticalDrives.Update(input);
             _dataFromService.SaveChanges();
             return true;
         }
 
-        public bool deleteGraphicsCard(GraphicsCard card)
+        public bool deleteOpticalDrive(OpticalDrive input)
         {
-            _dataFromService.GraphicsCards.Remove(card);
+            _dataFromService.OpticalDrives.Remove(input);
             _dataFromService.SaveChanges();
             return true;
         }

@@ -11,8 +11,8 @@ namespace PrometheusAPI.Controllers
     [Route("[controller]")]
     public class AccountInfo
     {
-         private readonly authService _dataFromLogin;
-         private readonly AccountInfoService _dataFromAccountInfo;
+        private readonly authService _dataFromLogin;
+        private readonly AccountInfoService _dataFromAccountInfo;
 
         public AccountInfo(authService dataFromLogin, AccountInfoService dataFromAccountInfo)
         {
@@ -21,13 +21,15 @@ namespace PrometheusAPI.Controllers
         }
 
 
-         [HttpPost("SignUp")]
+        [HttpPost("SignUp")]
         public bool AddUserInfo(Login user)
         {
-            if(! _dataFromLogin.CheckAccount(user.Email, user.Password))
+            if (!_dataFromLogin.CheckAccount(user.Email, user.Password))
             {
-            return _dataFromAccountInfo.AddUsersInfo(user);
-            }else{
+                return _dataFromAccountInfo.AddUsersInfo(user);
+            }
+            else
+            {
                 return false;
             }
         }

@@ -7,41 +7,41 @@ using PrometheusAPI.Services;
 
 namespace PrometheusAPI.Services
 {
-    public class GraphicsCardService
+    public class ProcessorService
     {
         private readonly DataContext _dataFromService;
-        public GraphicsCardService(DataContext dataFromService)
+        public ProcessorService(DataContext dataFromService)
         {
             _dataFromService = dataFromService;
         }
-        public IEnumerable<GraphicsCard> getGraphicsCards()
+        public IEnumerable<Processor> getProcessors()
         {
-            return _dataFromService.GraphicsCards;
+            return _dataFromService.Processors;
         }
 
-        public GraphicsCard GetGraphicsCardById(int id)
+        public Processor GetProcessorById(int id)
         {
-            return _dataFromService.GraphicsCards
+            return _dataFromService.Processors
             .SingleOrDefault(p => p.Id == id);
         }
         
-        public bool addGraphicsCard(GraphicsCard card)
+        public bool addProcessor(Processor chip)
         {
-            _dataFromService.Add(card);
+            _dataFromService.Processors.Add(chip);
             _dataFromService.SaveChanges();
             return true;
         }
 
-        public bool updateGraphicsCard(GraphicsCard card)
+        public bool updateProcessor(Processor chip)
         {
-            _dataFromService.GraphicsCards.Update(card);
+            _dataFromService.Processors.Update(chip);
             _dataFromService.SaveChanges();
             return true;
         }
 
-        public bool deleteGraphicsCard(GraphicsCard card)
+        public bool deleteProcessor(Processor chip)
         {
-            _dataFromService.GraphicsCards.Remove(card);
+            _dataFromService.Processors.Remove(chip);
             _dataFromService.SaveChanges();
             return true;
         }

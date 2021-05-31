@@ -11,9 +11,9 @@ namespace PrometheusAPI.Services
 
         public AccountInfoService(DataContext context)
         {
-             _context = context;
+            _context = context;
         }
-         public IEnumerable<Login> GetAccountList()
+        public IEnumerable<Login> GetAccountList()
         {
             return _context.Users;
         }
