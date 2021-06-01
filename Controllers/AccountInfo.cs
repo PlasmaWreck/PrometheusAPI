@@ -39,5 +39,9 @@ namespace PrometheusAPI.Controllers
         {
             return _dataFromAccountInfo.GetAccountList();
         }
+
+        [HttpPost("savedbuild")]
+        public bool UpdateSavedBuild([FromBody] SavedBuild inputObj)
+            => _dataFromAccountInfo.UpdateSavedBuild(inputObj);
     }
 }

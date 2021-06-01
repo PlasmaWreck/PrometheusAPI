@@ -24,5 +24,34 @@ namespace PrometheusAPI.Services
             _context.SaveChanges();
             return true;
         }
+
+        public bool UpdateSavedBuild(SavedBuild inputObj)
+        {
+            var returnable = false;
+            if(inputObj.Id == 0)
+            {
+                _context.Add(new SavedBuild
+                {
+                    Id = 0,
+                    CaseId = inputObj.CaseId,
+                    LoginId = inputObj.LoginId,
+                    CoolerId = inputObj.CoolerId,
+                    MemoryId = inputObj.MemoryId,
+                    HardDriveId = inputObj.HardDriveId,
+                    ProcessorId = inputObj.ProcessorId,
+                    MotherBoardId = inputObj.MotherBoardId,
+                    PowerSupplyId = inputObj.PowerSupplyId,
+                    GraphicsCardId = inputObj.GraphicsCardId,
+                });
+                returnable = true;
+            }else
+            {
+                _context.Update(inputObj);
+                returnable = false;
+            }
+            _context.SaveChanges();
+            return returnable;
+
+        }
     }
 }
