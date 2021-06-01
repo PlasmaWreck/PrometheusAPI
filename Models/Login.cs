@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+
 namespace PrometheusAPI.Models
 {
     public class Login
@@ -6,6 +8,7 @@ namespace PrometheusAPI.Models
         public string Email { get; set; }
         public string Password { get; set; }
 
+        public virtual List<SavedBuild> SavedBuilds { get; set;} = default!;
         public Login() { }
     }
 }

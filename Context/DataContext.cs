@@ -17,6 +17,7 @@ namespace PrometheusAPI.Context
         public DbSet<Processor> Processors { get; set; }
         public DbSet<PowerSupply> PowerSupplies { get; set; }
         public DbSet<Cooler> Coolers { get; set; }
+        public DbSet<SavedBuild> SavedBuilds { get; set; }
 
         public DataContext(DbContextOptions<DataContext> options) : base(options)
         { }
