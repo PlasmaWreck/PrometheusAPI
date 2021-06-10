@@ -50,7 +50,7 @@ namespace PrometheusAPI.Controllers
             return _dataFromService.deleteProcessor (chip);
         }
 
-        [HttpPost("getrange/{price}")]
+        [HttpGet("getrange/{price}")]
         public List<Processor> getRange([FromRoute] double price)
         {
             return _dataFromService.getRange(price);

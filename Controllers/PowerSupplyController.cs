@@ -50,7 +50,7 @@ namespace PrometheusAPI.Controllers
             return _dataFromService.deletePowerSupply(input);
         }
 
-        [HttpPost("getrange/{price}")]
+        [HttpGet("getrange/{price}")]
         public List<PowerSupply> getRange([FromRoute] double price)
         {
             return _dataFromService.getRange(price);
