@@ -49,7 +49,7 @@ namespace PrometheusAPI.Services
 
         public List<OS> getRange(double price)
         {
-            var startingList = _dataFromService.Cases.ToList();
+            var startingList = _dataFromService.OperatingSystems.ToList();
 
             var priceList = startingList
             .Select(x => new RangeSaver

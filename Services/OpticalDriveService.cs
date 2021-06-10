@@ -49,7 +49,7 @@ namespace PrometheusAPI.Services
 
         public List<OpticalDrive> getRange(double price)
         {
-            var startingList = _dataFromService.Cases.ToList();
+            var startingList = _dataFromService.OpticalDrives.ToList();
 
             var priceList = startingList
             .Select(x => new RangeSaver
