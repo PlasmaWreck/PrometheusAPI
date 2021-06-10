@@ -25,7 +25,7 @@ namespace PrometheusAPI.Services
             return _dataFromService.Processors
             .SingleOrDefault(p => p.Id == id);
         }
-        
+
         public bool addProcessor(Processor chip)
         {
             _dataFromService.Processors.Add(chip);
@@ -58,7 +58,6 @@ namespace PrometheusAPI.Services
         public List<Processor> getRange(double price)
         {
             var startingList = _dataFromService.Cases.ToList();
-
             var priceList = startingList
             .Select(x => new RangeSaver
             {
@@ -67,24 +66,24 @@ namespace PrometheusAPI.Services
             })
             .OrderBy(x => x.Price)
             .ToList();
-
             var nearest = priceList.OrderBy(x => Math.Abs(x.Price - price)).First();
-
             var closestRangeSaver = priceList.SingleOrDefault(x => nearest.Price == x.Price);
-
-            if(priceList[priceList.Count - 1].Id == closestRangeSaver.Id)
+            if (priceList[priceList.Count - 1].Id == closestRangeSaver.Id)
             {
                 return _dataFromService.Processors
                 .Where(x => x.Id == priceList[priceList.Count - 1].Id || x.Id == priceList[priceList.Count - 2].Id || x.Id == priceList[priceList.Count - 3].Id)
                 .OrderBy(x => x.Price)
                 .ToList();
-            }else if(priceList[0].Id == closestRangeSaver.Id)
+            }
+            else if (priceList[0].Id == closestRangeSaver.Id)
             {
                 return _dataFromService.Processors
                 .Where(x => x.Id == priceList[0].Id || x.Id == priceList[1].Id || x.Id == priceList[2].Id)
                 .OrderBy(x => x.Price)
                 .ToList();
-            }else{
+            }
+            else
+            {
                 var test = priceList.IndexOf(nearest);
                 return _dataFromService.Processors
                 .Where(x => x.Id == priceList[test].Id || x.Id == priceList[test + 1].Id || x.Id == priceList[test - 1].Id)
