@@ -48,5 +48,11 @@ namespace PrometheusAPI.Controllers
         {
             return _dataFromService.deleteCooler(input);
         }
+
+        [HttpPost("getrange/{price}")]
+        public List<Cooler> getRange([FromRoute] double price)
+        {
+            return _dataFromService.getRange(price);
+        }
     }
 }

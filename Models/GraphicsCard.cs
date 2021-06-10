@@ -21,4 +21,10 @@ namespace PrometheusAPI.Models
         public string ImagePath { get; set; }
 
     }
+
+    public class RangeSaver
+    { 
+        public int Id { get; set; }
+        public double Price { get; set; }
+    }
 }

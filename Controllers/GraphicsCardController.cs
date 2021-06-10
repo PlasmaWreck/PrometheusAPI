@@ -49,5 +49,10 @@ namespace PrometheusAPI.Controllers
         {
             return _dataFromService.deleteGraphicsCard(card);
         }
+        [HttpPost("getrange/{price}")]
+        public List<GraphicsCard> getRange([FromRoute] double price)
+        {
+            return _dataFromService.getRange(price);
+        }
     }
 }

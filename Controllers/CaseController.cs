@@ -49,5 +49,11 @@ namespace PrometheusAPI.Controllers
         {
             return _dataFromService.deleteCase(input);
         }
+        
+        [HttpPost("getrange/{price}")]
+        public List<Case> getRange([FromRoute] double price)
+        {
+            return _dataFromService.getRange(price);
+        }
     }
 }

@@ -48,5 +48,11 @@ namespace PrometheusAPI.Controllers
         {
             return _dataFromService.deleteMemory(input);
         }
+
+        [HttpPost("getrange/{price}")]
+        public List<Memory> getRange([FromRoute] double price)
+        {
+            return _dataFromService.getRange(price);
+        }
     }
 }

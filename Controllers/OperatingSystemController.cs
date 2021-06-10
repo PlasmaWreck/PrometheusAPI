@@ -49,5 +49,11 @@ namespace PrometheusAPI.Controllers
         {
             return _dataFromService.deleteOS(input);
         }
+
+        [HttpPost("getrange/{price}")]
+        public List<OS> getRange([FromRoute] double price)
+        {
+            return _dataFromService.getRange(price);
+        }
     }
 }

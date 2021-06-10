@@ -49,5 +49,11 @@ namespace PrometheusAPI.Controllers
         {
             return _dataFromService.deleteOpticalDrive(input);
         }
+
+        [HttpPost("getrange/{price}")]
+        public List<OpticalDrive> getRange([FromRoute] double price)
+        {
+            return _dataFromService.getRange(price);
+        }
     }
 }

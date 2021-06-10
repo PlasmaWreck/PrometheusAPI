@@ -38,16 +38,22 @@ namespace PrometheusAPI.Controllers
             return _dataFromService.addProcessor (chip);
         }
 
-        [HttpPut("update")]
-        public bool UpdateId([FromBody] Processor chip)
+        [HttpPut("update/{id}/{newprice}")]
+        public bool UpdateId([FromRoute] int id, [FromRoute] string newPrice)
         {
-            return _dataFromService.updateProcessor(chip);
+            return _dataFromService.updatePrice(id,newPrice);
         }
 
         [HttpDelete("delete")]
         public bool deleteProcessor(Processor chip)
         {
             return _dataFromService.deleteProcessor (chip);
+        }
+
+        [HttpPost("getrange/{price}")]
+        public List<Processor> getRange([FromRoute] double price)
+        {
+            return _dataFromService.getRange(price);
         }
     }
 }
